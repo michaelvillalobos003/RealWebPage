@@ -25,6 +25,7 @@
         <a href="projects.html" class="nav-link" id="navProjects">Projects</a>
         <a href="experience.html" class="nav-link" id="navExperience">Experience</a>
         <a href="admin.html" class="nav-link" id="navAdmin">Admin <span class="nav-badge" id="navAdminBadge">Portal</span></a>
+        <a href="#contactSection" class="nav-cta-btn" id="navContactCta">Inquire ↗</a>
       </nav>
     </div>
   </header>
@@ -35,27 +36,55 @@
 
       <!-- Hero Section (Above the fold with Student Full Name H1 and Face Portrait) -->
       <section class="section hero-section" id="heroSection">
+        <!-- Animated WebGL Shader Background Canvas -->
+        <div class="hero-shader-container" id="heroShaderContainer" aria-hidden="true">
+          <canvas id="heroShaderCanvas" class="hero-shader-canvas"></canvas>
+          <div class="hero-shader-overlay" id="heroShaderOverlay"></div>
+        </div>
+
         <div class="hero-grid" id="heroGrid">
           
           <div class="hero-text" id="heroText">
-            <!-- Eyebrow Badge inspired by layout reference -->
-            <div class="section-eyebrow" id="heroEyebrow">
-              [Student Status: High School Web Development]
+            <!-- Hero Floating 3D Chrome Torus Ring (Small Accent near Name) -->
+            <div class="hero-floating-torus hero-torus-left" id="heroTorusLeft" aria-hidden="true">
+              <img src="assets/images/torus_3d.png" alt="" loading="lazy">
             </div>
 
-            <!-- Student Full Name as the Primary H1 -->
-            <h1 id="studentNameHeading">Michael Villalobos</h1>
+            <!-- Eyebrow Pill inspired by reference website: [NEW] Student Status: High School Web Development -->
+            <div class="hero-eyebrow-pill scroll-reveal-text" id="heroEyebrow">
+              <span class="eyebrow-new-tag">NEW</span>
+              <span class="eyebrow-pill-text">High School Web Development & AI</span>
+            </div>
+
+            <!-- Student Full Name as the Primary H1 with Left-to-Right Letter Entry Animation -->
+            <div class="name-reveal-wrapper" id="nameRevealWrapper">
+              <h1 id="studentNameHeading" class="name-reveal-heading" aria-label="Michael Villalobos">
+                <span class="name-word name-word-first" id="nameWordFirst">
+                  <span class="letter-slot"><span class="letter-char" style="--char-i: 0">M</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 1">i</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 2">c</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 3">h</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 4">a</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 5">e</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 6">l</span></span>
+                </span>
+                <span class="name-word name-word-last" id="nameWordLast">
+                  <span class="letter-slot"><span class="letter-char" style="--char-i: 7">V</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 8">i</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 9">l</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 10">l</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 11">a</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 12">l</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 13">o</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 14">b</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 15">o</span></span><span class="letter-slot"><span class="letter-char" style="--char-i: 16">s</span></span>
+                </span>
+              </h1>
+              <button type="button" class="replay-name-btn" id="replayNameBtn" title="Replay letter animation" aria-label="Replay letter animation">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                  <path d="M3 3v5h5"/>
+                </svg>
+                <span>Replay</span>
+              </button>
+            </div>
             
-            <!-- Subtitle / Headline Placeholder -->
-            <div class="hero-subtitle" id="heroSubtitle">
-              [Headline Placeholder: High school student exploring web design, technology, and interactive computing.]
+            <!-- Subtitle / Headline -->
+            <div class="hero-subtitle scroll-reveal-text" id="heroSubtitle">
+              Grossmont High School student exploring web design, technology, and building intelligent solutions powered by AI.
             </div>
             
             <!-- Biography: Contains EXACTLY 3 <p> elements as required by guidelines -->
             <div class="hero-bio" id="biographyContainer">
-              <p id="bioParagraph1"><strong>[Biography Paragraph 1 — Background & Education]:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              <p id="bioParagraph2"><strong>[Biography Paragraph 2 — Current Focus & Technical Skills]:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <p id="bioParagraph3"><strong>[Biography Paragraph 3 — Passions, Collaboration & Future]:</strong> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+              <p id="bioParagraph1" class="scroll-reveal-text"><strong>Background & Education:</strong> I am currently a 9th-grade freshman at Grossmont High School. While I had experimented with coding in the past without finding my groove, joining this web design class sparked a genuine passion for programming, giving me the structure and momentum to understand how modern web interfaces are designed and developed.</p>
+              <p id="bioParagraph2" class="scroll-reveal-text"><strong>Current Focus & Technical Skills:</strong> Bilingual in English and Spanish, I actively leverage modern developer tools including GitHub, Replit, Google AI Studio, and Mistral to experiment, test ideas, and build functional projects. Through my web design coursework, I am sharpening my design sensibilities, code structure, and development workflows, and I look forward to advancing my skills even further.</p>
+              <p id="bioParagraph3" class="scroll-reveal-text"><strong>Interests, Collaboration & Future Goals:</strong> Outside the classroom, I enjoy staying active by riding my bike and hanging out with friends. While I am not currently part of a school club, I am eager to get involved in student organizations soon. My primary ambition is to continually elevate my coding abilities, explore the frontiers of artificial intelligence, and become a versatile, high-performing developer.</p>
             </div>
 
             <div class="hero-actions" id="heroActions">
@@ -66,17 +95,31 @@
 
           <!-- Student Face Portrait Prominently Displayed Above the Fold -->
           <div class="hero-image-wrapper" id="heroImageWrapper">
+            <!-- 3D Chrome Floating Torus Rings around the Portrait Image -->
+            <div class="portrait-torus-ring portrait-torus-top" id="portraitTorusTop" aria-hidden="true">
+              <img src="assets/images/torus_3d.png" alt="" loading="lazy">
+            </div>
+            <div class="portrait-torus-ring portrait-torus-bottom" id="portraitTorusBottom" aria-hidden="true">
+              <img src="assets/images/torus_3d.png" alt="" loading="lazy">
+            </div>
+            <!-- Concentric Glowing Orbit Rings -->
+            <div class="portrait-orbit-aura" aria-hidden="true">
+              <span class="orbit-ring ring-1"></span>
+              <span class="orbit-ring ring-2"></span>
+              <span class="orbit-ring ring-3"></span>
+            </div>
+
             <img src="assets/images/placeholder_portrait.svg" alt="Portrait Placeholder of Michael Villalobos" class="student-portrait" id="studentPortraitImage">
             <div class="portrait-badge" id="portraitBadge">
               <div class="portrait-badge-title" id="portraitBadgeTitle">Michael Villalobos</div>
-              <div class="portrait-badge-sub" id="portraitBadgeSub">[Placeholder: Add your face photo in assets/images/]</div>
+              <div class="portrait-badge-sub" id="portraitBadgeSub">Grossmont High School · Freshman</div>
             </div>
           </div>
 
         </div>
       </section>
 
-      <!-- Layout Inspiration Feature Box (Sleek Dark Dashboard with Light Blue Theme) -->
+      <!-- Layout Inspiration Feature Box (Sleek Dark Showcase with Floating 3D Chrome Elements, Dashboard, and Tech Grid) -->
       <section class="mock-window-frame" id="themeInspirationWindow">
         <div class="mock-window-topbar">
           <div class="mock-window-dots">
@@ -84,35 +127,234 @@
             <span class="mock-dot yellow"></span>
             <span class="mock-dot green"></span>
           </div>
-          <div class="mock-window-url">michaelvillalobos.portfolio / dashboard-preview</div>
-          <div style="font-size: 0.75rem; color: var(--color-primary); font-weight: 600;">Light Blue + Black Theme</div>
+          <div class="mock-window-url">michaelvillalobos.dev / student-dashboard</div>
+          <div class="topbar-status-badge">
+            <span class="topbar-status-dot"></span> Light Blue System
+          </div>
         </div>
-        <div class="mock-window-content">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
-            <div>
-              <h3 style="margin-bottom: 0.2rem;">[Workspace Preview: Interactive Learning Dashboard]</h3>
-              <p style="font-size: 0.88rem;">Layout inspired by modern dark interfaces with ambient light blue glow accents.</p>
-            </div>
-            <span class="badge-status new" style="background-color: var(--color-primary-light); color: var(--color-primary); border-color: var(--color-primary);">
-              ⚡ Active Structure
-            </span>
+
+        <div class="showcase-stage" id="showcaseStage">
+          <!-- Floating 3D Geometric UI Elements (Chrome torus, sphere, star, and cone) -->
+          <div class="floating-asset floating-torus" id="floatingTorus" aria-hidden="true">
+            <img src="assets/images/torus_3d.png" alt="Glossy chrome floating torus" loading="lazy">
+          </div>
+          <div class="floating-asset floating-sphere" id="floatingSphere" aria-hidden="true">
+            <img src="assets/images/sphere_3d.png" alt="Glossy liquid chrome floating sphere" loading="lazy">
+          </div>
+          <div class="floating-asset floating-star" id="floatingStar" aria-hidden="true">
+            <img src="assets/images/star_3d.png" alt="Glossy beveled chrome 4-point star" loading="lazy">
+          </div>
+          <div class="floating-asset floating-cone" id="floatingCone" aria-hidden="true">
+            <img src="assets/images/cone_3d.png" alt="Glossy chrome pyramid prism" loading="lazy">
           </div>
 
-          <div class="grid-3" style="margin-top: 1rem;">
-            <div class="card" style="padding: 1.25rem;">
-              <div style="font-size: 0.8rem; color: var(--color-text-light); text-transform: uppercase;">[Metric 1 Placeholder]</div>
-              <div style="font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0.35rem 0;">100%</div>
-              <p style="font-size: 0.85rem; color: var(--color-primary);">Lorem ipsum dolor sit amet</p>
+          <!-- Central Spotlight & Glow Backdrop -->
+          <div class="showcase-glow-backdrop" aria-hidden="true"></div>
+
+          <!-- Central Dashboard Mockup Window Frame -->
+          <div class="central-dashboard" id="centralDashboard">
+            <!-- Mini Inner Window Topbar -->
+            <div class="dash-topbar">
+              <div class="dash-topbar-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="dash-search">
+                <span class="dash-search-icon">🔍</span>
+                <span class="dash-search-text">Search student projects & workflows...</span>
+                <span class="dash-search-kbd">⌘K</span>
+              </div>
+              <div class="dash-user-pill">
+                <span class="dash-user-dot"></span>
+                <span>Michael V. · High School</span>
+              </div>
             </div>
-            <div class="card" style="padding: 1.25rem;">
-              <div style="font-size: 0.8rem; color: var(--color-text-light); text-transform: uppercase;">[Metric 2 Placeholder]</div>
-              <div style="font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0.35rem 0;">6 Pages</div>
-              <p style="font-size: 0.85rem; color: #34d399;">Fully linked architecture</p>
+
+            <!-- Dashboard Inner Grid -->
+            <div class="dash-grid">
+              <!-- Sidebar Navigation -->
+              <aside class="dash-sidebar" aria-label="Dashboard navigation">
+                <div class="dash-nav-item active">
+                  <span class="dash-nav-icon">📊</span>
+                  <span>Overview</span>
+                </div>
+                <div class="dash-nav-item">
+                  <span class="dash-nav-icon">💻</span>
+                  <span>Coursework</span>
+                </div>
+                <div class="dash-nav-item">
+                  <span class="dash-nav-icon">✨</span>
+                  <span>AI Workflows</span>
+                </div>
+                <div class="dash-nav-item">
+                  <span class="dash-nav-icon">🎯</span>
+                  <span>Milestones</span>
+                </div>
+                <div class="dash-nav-item">
+                  <span class="dash-nav-icon">🔗</span>
+                  <span>Repository Logs</span>
+                </div>
+              </aside>
+
+              <!-- Main Dashboard Area -->
+              <div class="dash-main">
+                <!-- Metrics Row -->
+                <div class="dash-metrics-row">
+                  <div class="dash-metric-card">
+                    <div class="metric-label">Coding Momentum <span class="metric-info-icon">ⓘ</span></div>
+                    <div class="metric-value-row">
+                      <span class="metric-big-num">98.4%</span>
+                      <span class="metric-badge-gain">+12.6%</span>
+                    </div>
+                    <div class="metric-subtext">Active daily builds on Replit & GitHub</div>
+                  </div>
+
+                  <div class="dash-metric-card">
+                    <div class="metric-label">Coursework Mastery <span class="metric-info-icon">ⓘ</span></div>
+                    <div class="metric-value-row">
+                      <span class="metric-big-num">Freshman</span>
+                      <span class="metric-badge-tag">Grossmont</span>
+                    </div>
+                    <div class="metric-subtext">Web Design & Modern JS Fundamentals</div>
+                  </div>
+
+                  <div class="dash-metric-card">
+                    <div class="metric-label">AI & Dev Tools <span class="metric-info-icon">ⓘ</span></div>
+                    <div class="metric-value-row">
+                      <span class="metric-big-num">4 Suites</span>
+                      <span class="metric-badge-tag">Bilingual</span>
+                    </div>
+                    <div class="metric-subtext">AI Studio, Replit, Mistral, GitHub</div>
+                  </div>
+                </div>
+
+                <!-- Interactive Activity Line Graph & Keywords Section -->
+                <div class="dash-analytics-row">
+                  <!-- Vector Chart Panel -->
+                  <div class="dash-chart-panel">
+                    <div class="chart-panel-header">
+                      <div>
+                        <div class="chart-panel-title">Development Activity & Iterations</div>
+                        <div class="chart-panel-sub">Weekly commit frequency & UI experimentation</div>
+                      </div>
+                      <span class="dash-date-pill">Sep 2026 · Live Track</span>
+                    </div>
+
+                    <!-- SVG Vector Curve Line Graph with Cyan Gradient and Interactive Tooltip -->
+                    <div class="dash-chart-svg-wrap">
+                      <svg class="dash-chart-svg" viewBox="0 0 540 180" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="chartGlowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.38"/>
+                            <stop offset="75%" stop-color="#38bdf8" stop-opacity="0.05"/>
+                            <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+                          </linearGradient>
+                          <linearGradient id="chartLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#38bdf8"/>
+                            <stop offset="50%" stop-color="#7dd3fc"/>
+                            <stop offset="100%" stop-color="#38bdf8"/>
+                          </linearGradient>
+                          <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="3" result="blur"/>
+                            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                          </filter>
+                        </defs>
+                        <!-- Grid Lines -->
+                        <line x1="0" y1="40" x2="540" y2="40" stroke="rgba(255,255,255,0.04)" stroke-dasharray="4 4"/>
+                        <line x1="0" y1="85" x2="540" y2="85" stroke="rgba(255,255,255,0.04)" stroke-dasharray="4 4"/>
+                        <line x1="0" y1="130" x2="540" y2="130" stroke="rgba(255,255,255,0.04)" stroke-dasharray="4 4"/>
+                        
+                        <!-- Filled Gradient Area -->
+                        <path d="M 0 145 C 50 140, 90 90, 140 105 C 190 120, 230 65, 280 50 C 330 35, 380 95, 430 70 C 480 45, 510 28, 540 32 L 540 180 L 0 180 Z" fill="url(#chartGlowGrad)"/>
+                        
+                        <!-- Crisp Glowing Line -->
+                        <path d="M 0 145 C 50 140, 90 90, 140 105 C 190 120, 230 65, 280 50 C 330 35, 380 95, 430 70 C 480 45, 510 28, 540 32" fill="none" stroke="url(#chartLineGrad)" stroke-width="2.75" filter="url(#cyanGlow)"/>
+
+                        <!-- Data Points -->
+                        <circle cx="140" cy="105" r="4.5" fill="#030712" stroke="#38bdf8" stroke-width="2.5"/>
+                        <circle cx="280" cy="50" r="5" fill="#38bdf8" stroke="#ffffff" stroke-width="2"/>
+                        <circle cx="430" cy="70" r="4.5" fill="#030712" stroke="#38bdf8" stroke-width="2.5"/>
+                      </svg>
+
+                      <!-- Floating Glass Inspection Callout (Like Jun 18 Visibility in screenshot) -->
+                      <div class="dash-chart-callout" style="left: 48%; top: 12%;">
+                        <div class="callout-date">Current Velocity</div>
+                        <div class="callout-val"><span class="callout-dot"></span> Peak Focus: 99.2%</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Focus Competencies Panel -->
+                  <div class="dash-keywords-panel">
+                    <div class="keywords-panel-title">Core Competencies</div>
+                    <ul class="keywords-list">
+                      <li class="keywords-item">
+                        <span class="kw-icon">⦿</span>
+                        <span class="kw-name">HTML5 Semantic Architecture</span>
+                        <span class="kw-check">✓</span>
+                      </li>
+                      <li class="keywords-item">
+                        <span class="kw-icon">⦿</span>
+                        <span class="kw-name">Responsive CSS & Animations</span>
+                        <span class="kw-check">✓</span>
+                      </li>
+                      <li class="keywords-item">
+                        <span class="kw-icon">⦿</span>
+                        <span class="kw-name">JavaScript & DOM Events</span>
+                        <span class="kw-check">✓</span>
+                      </li>
+                      <li class="keywords-item">
+                        <span class="kw-icon">⦿</span>
+                        <span class="kw-name">AI Studio & LLM Prompting</span>
+                        <span class="kw-check">✓</span>
+                      </li>
+                      <li class="keywords-item">
+                        <span class="kw-icon">⦿</span>
+                        <span class="kw-name">Bilingual Tech Communication</span>
+                        <span class="kw-check">✓</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card" style="padding: 1.25rem;">
-              <div style="font-size: 0.8rem; color: var(--color-text-light); text-transform: uppercase;">[Storage Status]</div>
-              <div style="font-size: 1.75rem; font-weight: 800; color: #ffffff; margin: 0.35rem 0;">JSON Active</div>
-              <p style="font-size: 0.85rem; color: var(--color-primary);">Persistent contact storage</p>
+          </div>
+
+          <!-- Bottom Tech & Partners Logo Grid (Like Acme Corp, Pulse, Quantum in screenshot) -->
+          <div class="showcase-partners-section">
+            <div class="partners-label">DEVELOPER TOOLKIT & POWERED BY MODERN PLATFORMS</div>
+            <div class="partners-grid">
+              <div class="partner-card">
+                <span class="partner-icon">⚡</span>
+                <span class="partner-name">Google AI Studio</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">⌥</span>
+                <span class="partner-name">GitHub</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">⌘</span>
+                <span class="partner-name">Replit Core</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">✦</span>
+                <span class="partner-name">Mistral AI</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">🌐</span>
+                <span class="partner-name">HTML5 / CSS3</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">★</span>
+                <span class="partner-name">JavaScript ES6+</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">🏫</span>
+                <span class="partner-name">Grossmont High</span>
+              </div>
+              <div class="partner-card">
+                <span class="partner-icon">☁</span>
+                <span class="partner-name">Cloud Run</span>
+              </div>
             </div>
           </div>
         </div>
@@ -121,9 +363,14 @@
       <!-- Featured Media Section (Includes at least two images and/or videos) -->
       <section class="section" id="featuredMediaSection">
         <div class="section-header" id="featuredMediaHeader">
-          <div class="section-eyebrow">Highlights & Media</div>
-          <h2>Featured Media Placeholders</h2>
-          <p>Two required media items (video & image placeholders) ready for your personal recordings and photos.</p>
+          <div class="section-eyebrow scroll-reveal-text">Highlights & Media</div>
+          <h2>
+            <span class="text-block-reveal" data-block-color="#38bdf8" data-duration="0.7">
+              <span class="reveal-text">Featured Media Placeholders</span>
+              <span class="reveal-block"></span>
+            </span>
+          </h2>
+          <p class="scroll-reveal-text">Two required media items (video & image placeholders) ready for your personal recordings and photos.</p>
         </div>
 
         <div class="featured-media-grid" id="featuredMediaGrid">
@@ -135,8 +382,8 @@
               Your browser does not support the video tag.
             </video>
             <div class="media-frame-caption" id="homeVideoCaption">
-              <h3>[Placeholder: Featured Video Demonstration]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <h3 class="scroll-reveal-text">[Placeholder: Featured Video Demonstration]</h3>
+              <p class="scroll-reveal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
           </div>
 
@@ -144,8 +391,8 @@
           <div class="media-frame" id="homeMediaImageCard">
             <img src="assets/images/placeholder_media.svg" alt="Featured Media Image Placeholder" id="homeHackathonImage">
             <div class="media-frame-caption" id="homeImageCaption">
-              <h3>[Placeholder: Featured Project / Activity Photo]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              <h3 class="scroll-reveal-text">[Placeholder: Featured Project / Activity Photo]</h3>
+              <p class="scroll-reveal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
             </div>
           </div>
 
@@ -155,34 +402,39 @@
       <!-- Contact Section & Contact Form -->
       <section class="section" id="contactSection">
         <div class="section-header" id="contactSectionHeader">
-          <div class="section-eyebrow">Direct Inquiries</div>
-          <h2>Get In Touch</h2>
-          <p>Send a direct message via the contact form or connect through the links below.</p>
+          <div class="section-eyebrow scroll-reveal-text">Direct Inquiries</div>
+          <h2>
+            <span class="text-block-reveal" data-block-color="#38bdf8" data-duration="0.7">
+              <span class="reveal-text">Get In Touch</span>
+              <span class="reveal-block"></span>
+            </span>
+          </h2>
+          <p class="scroll-reveal-text">Send a direct message via the contact form or connect through the links below.</p>
         </div>
 
         <div class="contact-grid" id="contactGrid">
           
           <!-- Left Column: Contact Links & Social Placeholders -->
           <div class="contact-info" id="contactInfoCol">
-            <h3>Let's Connect</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feel free to reach out with questions, feedback, or collaborative ideas.</p>
+            <h3 class="scroll-reveal-text">Let's Connect</h3>
+            <p class="scroll-reveal-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feel free to reach out with questions, feedback, or collaborative ideas.</p>
             
             <ul class="contact-info-list" id="contactInfoList">
-              <li class="contact-info-item" id="contactEmailItem">
+              <li class="contact-info-item scroll-reveal-text" id="contactEmailItem">
                 <div class="contact-icon" id="emailIcon">✉</div>
                 <div>
                   <div style="font-size: 0.82rem; color: var(--color-text-light);">Direct Email</div>
                   <a href="mailto:michaelvilla0031@gmail.com" style="font-weight: 600;" id="mailLink">michaelvilla0031@gmail.com</a>
                 </div>
               </li>
-              <li class="contact-info-item" id="contactLocationItem">
+              <li class="contact-info-item scroll-reveal-text" id="contactLocationItem">
                 <div class="contact-icon" id="locationIcon">📍</div>
                 <div>
                   <div style="font-size: 0.82rem; color: var(--color-text-light);">Location</div>
                   <strong>[Placeholder: City, State / School]</strong>
                 </div>
               </li>
-              <li class="contact-info-item" id="contactStatusItem">
+              <li class="contact-info-item scroll-reveal-text" id="contactStatusItem">
                 <div class="contact-icon" id="statusIcon">⚡</div>
                 <div>
                   <div style="font-size: 0.82rem; color: var(--color-text-light);">Current Focus</div>
@@ -191,7 +443,7 @@
               </li>
             </ul>
 
-            <h4 style="margin-bottom: 0.5rem; margin-top: 0.5rem; font-size: 1.05rem;">Social Profile Placeholders</h4>
+            <h4 class="scroll-reveal-text" style="margin-bottom: 0.5rem; margin-top: 0.5rem; font-size: 1.05rem;">Social Profile Placeholders</h4>
             <div class="social-links" id="socialLinksContainer">
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" id="socialGitHub">
                 <span>GitHub [Placeholder]</span> ↗
@@ -210,8 +462,8 @@
 
           <!-- Right Column: Contact Form (Saves to data/contactReceived.json) -->
           <div class="contact-form-wrapper" id="contactFormWrapper">
-            <h3 style="margin-bottom: 0.5rem;">Send a Message</h3>
-            <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">All fields marked with <span class="required-star">*</span> are required.</p>
+            <h3 class="scroll-reveal-text" style="margin-bottom: 0.5rem;">Send a Message</h3>
+            <p class="scroll-reveal-text" style="font-size: 0.9rem; margin-bottom: 1.5rem;">All fields marked with <span class="required-star">*</span> are required.</p>
 
             <!-- Form Status Alerts -->
             <div class="form-status-alert success" id="contactSuccessAlert" role="alert"></div>
