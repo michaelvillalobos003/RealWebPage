@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Gallery | Michael Villalobos</title>
+  <meta name="description" content="Explore project demonstrations, photography placeholders, and video media for Michael Villalobos.">
+  <meta property="og:title" content="Media Gallery | Michael Villalobos">
+  <meta property="og:description" content="Explore project demonstrations, photography placeholders, and video media for Michael Villalobos.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="mediaPageBody">
+
+  <!-- Universal Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container" id="headerContainer">
+      <a href="index.html" class="brand-link" id="brandLink">
+        <img src="assets/images/placeholder_portrait.svg" alt="Michael Villalobos" class="brand-avatar" id="headerAvatar">
+        <span>Michael Villalobos</span>
+      </a>
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html" class="nav-link" id="navHome">Home</a>
+        <a href="media.html" class="nav-link active" id="navMedia">Media</a>
+        <a href="future.html" class="nav-link" id="navFuture">Future</a>
+        <a href="projects.html" class="nav-link" id="navProjects">Projects</a>
+        <a href="experience.html" class="nav-link" id="navExperience">Experience</a>
+        <a href="admin.html" class="nav-link" id="navAdmin">Admin <span class="nav-badge" id="navAdminBadge">Portal</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="mediaMainContent">
+    <div class="container" id="mediaContainer">
+
+      <!-- Media Section Header -->
+      <section class="section" style="margin-bottom: 2.5rem;">
+        <div class="section-header" id="mediaGalleryHeader">
+          <div class="section-eyebrow">Interactive Showcase</div>
+          <h1>Media Gallery</h1>
+          <p>A structured 10-item media showcase with labeled placeholders for your personal photos, project demo videos, and social updates. Click any card to inspect in full view.</p>
+        </div>
+
+        <!-- 10 Gallery Items -->
+        <div class="gallery-grid" id="galleryGrid">
+          
+          <!-- Item 1: Video Placeholder -->
+          <div class="media-card" data-type="video" data-src="assets/videos/project_demo.mp4" data-title="[Placeholder: Video Demo 1]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." id="mediaCard1">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Video</span>
+              <img src="assets/images/placeholder_video.svg" alt="Placeholder Video 1">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Video Demo 1]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque varius nunc sit amet ultrices.</p>
+              <div class="media-card-action">Play Demo Video ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 2: Image Placeholder -->
+          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Project Showcase Photo 1]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco." id="mediaCard2">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Photo</span>
+              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 1">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Showcase Photo 1]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+              <div class="media-card-action">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 3: Image Placeholder -->
+          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Hackathon / Workshop 2]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident." id="mediaCard3">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Photo</span>
+              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 2">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Workshop Photo 2]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.</p>
+              <div class="media-card-action">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 4: Social Embed Card -->
+          <div class="media-card social-embed-card" id="mediaCard4">
+            <div class="social-embed-inner">
+              <span class="media-type-badge" style="position: static; align-self: flex-start;">Social Update</span>
+              <div class="social-embed-header">
+                <img src="assets/images/placeholder_portrait.svg" alt="Avatar" class="social-embed-avatar">
+                <div>
+                  <div class="social-embed-author">Michael Villalobos</div>
+                  <div class="social-embed-handle">@michael_v [Placeholder]</div>
+                </div>
+              </div>
+              <div class="social-embed-text">
+                "[Placeholder: Published my first interactive web development project with Light Blue styling and persistent JSON storage! Excited to learn more.]"
+              </div>
+              <div style="font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">
+                Posted · 2 days ago
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Video Placeholder -->
+          <div class="media-card" data-type="video" data-src="assets/videos/project_demo.mp4" data-title="[Placeholder: Video Demo 2]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec lectus feugiat, congue risus non." id="mediaCard5">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Video</span>
+              <img src="assets/images/placeholder_video.svg" alt="Placeholder Video 2">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Video Demo 2]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate tortor in metus mollis feugiat.</p>
+              <div class="media-card-action">Play Demo Video ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 6: Image Placeholder -->
+          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Code Lab / Computer Setup]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, nisl at aliquam interdum." id="mediaCard6">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Photo</span>
+              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 3">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Lab Setup Photo]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique purus sit amet libero porta.</p>
+              <div class="media-card-action">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 7: Image Placeholder -->
+          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Robotics / Hardware Build]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore." id="mediaCard7">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Photo</span>
+              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 4">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Project Build Photo]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus.</p>
+              <div class="media-card-action">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 8: Social Embed Card -->
+          <div class="media-card social-embed-card" id="mediaCard8">
+            <div class="social-embed-inner">
+              <span class="media-type-badge" style="position: static; align-self: flex-start;">Announcement</span>
+              <div class="social-embed-header">
+                <img src="assets/images/placeholder_portrait.svg" alt="Avatar" class="social-embed-avatar">
+                <div>
+                  <div class="social-embed-author">Michael Villalobos</div>
+                  <div class="social-embed-handle">@michael_v [Placeholder]</div>
+                </div>
+              </div>
+              <div class="social-embed-text">
+                "[Placeholder: Completed the first checkpoint of web development class! Building with HTML5 semantic tags, custom CSS variables, and server-side JavaScript.]"
+              </div>
+              <div style="font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">
+                Posted · 1 week ago
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 9: Image Placeholder -->
+          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Tech Presentation Photo]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed nibh id nisl pretium cursus." id="mediaCard9">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Photo</span>
+              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 5">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Presentation Photo]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ipsum et purus auctor feugiat.</p>
+              <div class="media-card-action">View Full Photo ↗</div>
+            </div>
+          </div>
+
+          <!-- Item 10: Image Placeholder -->
+          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Certificate / Award Photo]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sem sit amet ligula accumsan molestie." id="mediaCard10">
+            <div class="media-card-preview">
+              <span class="media-type-badge">Photo</span>
+              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 6">
+            </div>
+            <div class="media-card-body">
+              <h3>[Placeholder: Achievement Photo]</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis velit sit amet enim scelerisque.</p>
+              <div class="media-card-action">View Full Photo ↗</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-content" id="lightboxContent">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close Lightbox">✕</button>
+      <div class="lightbox-media-container" id="lightboxMediaContainer"></div>
+      <div class="lightbox-details" id="lightboxDetails">
+        <h3 id="lightboxTitle" style="color: #ffffff; margin-bottom: 0.5rem;"></h3>
+        <p id="lightboxCaption" style="color: var(--color-text-muted); font-size: 0.95rem;"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container" id="footerContainer">
+      <div class="footer-content" id="footerContent">
+        <div>
+          <div style="font-weight: 700; font-size: 1.15rem; color: #ffffff; margin-bottom: 0.25rem;">Michael Villalobos</div>
+          <div class="footer-copy">© 2026 Michael Villalobos. Web Development Student Portfolio.</div>
+        </div>
+        <nav class="footer-nav" id="footerNav">
+          <a href="index.html" id="footerHome">Home</a>
+          <a href="media.html" id="footerMedia">Media</a>
+          <a href="future.html" id="footerFuture">Future</a>
+          <a href="projects.html" id="footerProjects">Projects</a>
+          <a href="experience.html" id="footerExperience">Experience</a>
+          <a href="admin.html" id="footerAdmin">Admin</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="skyGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#0369a1" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#030712" stop-opacity="0.8"/>
+    </radialGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="500" fill="#0b0f19" rx="24"/>
+  <rect width="500" height="500" fill="url(#skyGlow)" rx="24"/>
+  <rect x="2" y="2" width="496" height="496" fill="none" stroke="url(#borderGrad)" stroke-width="2" rx="22" stroke-opacity="0.5"/>
+
+  <!-- Silhouette Icon -->
+  <g transform="translate(150, 90)" fill="#1e293b" stroke="#38bdf8" stroke-width="2.5">
+    <!-- Head -->
+    <circle cx="100" cy="80" r="55" fill="#131c2e"/>
+    <!-- Shoulders / Torso -->
+    <path d="M 20 230 C 20 170, 60 150, 100 150 C 140 150, 180 170, 180 230 Z" fill="#131c2e"/>
+  </g>
+
+  <!-- Camera / Upload Badge -->
+  <circle cx="250" cy="275" r="28" fill="#38bdf8" />
+  <path d="M 240 270 L 243 265 L 257 265 L 260 270 L 265 270 C 267 270, 269 272, 269 274 L 269 284 C 269 286, 267 288, 265 288 L 235 288 C 233 288, 231 286, 231 284 L 231 274 C 231 272, 233 270, 235 270 Z" fill="#030712"/>
+  <circle cx="250" cy="279" r="5" fill="#030712"/>
+
+  <!-- Labels -->
+  <text x="250" y="345" text-anchor="middle" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700">
+    [Placeholder: Student Portrait]
+  </text>
+  <text x="250" y="375" text-anchor="middle" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600">
+    Michael Villalobos
+  </text>
+  <text x="250" y="415" text-anchor="middle" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">
+    Replace with your photo in assets/images/
+  </text>
+  <text x="250" y="435" text-anchor="middle" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">
+    (Recommended: Clear face photo above the fold)
+  </text>
+</svg>

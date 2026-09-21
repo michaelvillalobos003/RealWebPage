@@ -1,0 +1,8 @@
+{
+  "name": "Michael Villalobos Portfolio",
+  "description": "Personal website, interactive media gallery, future roadmap, projects, experience, contact system, and admin dashboard for Michael Villalobos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,46 @@
+[
+  {
+    "id": "msg_1789756254301_5d762d52",
+    "firstName": "Jamie",
+    "lastName": "Smith",
+    "email": "jamie@example.com",
+    "reason": "Question",
+    "message": "I have a question about your distributed cache project.",
+    "submittedAt": "2026-09-18T18:30:54.301Z",
+    "replied": true,
+    "repliedAt": "2026-09-18T18:31:00.445Z"
+  },
+  {
+    "id": "msg_1789756255824_ce2c0179",
+    "firstName": "Sarah",
+    "lastName": "Connor",
+    "email": "sarah@cyberdyne.org",
+    "reason": "Opportunity",
+    "message": "We have a cloud infrastructure internship opening this summer and would love to interview you.",
+    "submittedAt": "2026-09-18T18:30:55.824Z",
+    "replied": false,
+    "repliedAt": null
+  },
+  {
+    "id": "msg_1789757007326_d3461ce0",
+    "firstName": "Sarah",
+    "lastName": "Jenkins",
+    "email": "sarah@example.com",
+    "reason": "Partnership",
+    "message": "Hello Michael, love the Light Blue and Black theme! Keep up the great work in web development class.",
+    "submittedAt": "2026-09-18T18:43:27.326Z",
+    "replied": true,
+    "repliedAt": "2026-09-18T18:43:44.356Z"
+  },
+  {
+    "id": "msg_1790012185006_a5b187bc",
+    "firstName": "Alex",
+    "lastName": "Rivera",
+    "email": "alex@example.com",
+    "reason": "Question",
+    "message": "Testing floating label contact form functionality.",
+    "submittedAt": "2026-09-21T17:36:25.006Z",
+    "replied": false,
+    "repliedAt": null
+  }
+]

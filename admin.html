@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Michael Villalobos</title>
+  <meta name="description" content="Administrative dashboard for managing contact inquiries and analytics for Michael Villalobos.">
+  <meta property="og:title" content="Admin Dashboard | Michael Villalobos">
+  <meta property="og:description" content="Administrative dashboard for managing contact inquiries and analytics for Michael Villalobos.">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Chart.js CDN for live metrics visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body id="adminPageBody">
+
+  <!-- Universal Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container" id="headerContainer">
+      <a href="index.html" class="brand-link" id="brandLink">
+        <img src="assets/images/placeholder_portrait.svg" alt="Michael Villalobos" class="brand-avatar" id="headerAvatar">
+        <span>Michael Villalobos</span>
+      </a>
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html" class="nav-link" id="navHome">Home</a>
+        <a href="media.html" class="nav-link" id="navMedia">Media</a>
+        <a href="future.html" class="nav-link" id="navFuture">Future</a>
+        <a href="projects.html" class="nav-link" id="navProjects">Projects</a>
+        <a href="experience.html" class="nav-link" id="navExperience">Experience</a>
+        <a href="admin.html" class="nav-link active" id="navAdmin">Admin <span class="nav-badge" id="navAdminBadge">Portal</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content" id="adminMainContent">
+    <div class="container" id="adminContainer">
+
+      <!-- Login Panel (Displayed when unauthenticated) -->
+      <section class="admin-login-panel" id="adminLoginSection">
+        <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--color-primary-light); border: 1px solid var(--color-primary-border); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.25rem auto; color: var(--color-primary); font-size: 1.5rem;">
+          🔒
+        </div>
+        <h2 style="margin-bottom: 0.5rem;">Admin Verification</h2>
+        <p style="font-size: 0.92rem; margin-bottom: 1.75rem;">Access student contact inquiries and message logs.</p>
+
+        <div class="form-status-alert error" id="loginErrorAlert" role="alert"></div>
+
+        <form id="adminLoginForm" novalidate>
+          <div class="form-group" style="text-align: left;">
+            <label for="adminPassword">Admin Password <span class="required-star">*</span></label>
+            <input type="password" id="adminPassword" placeholder="Enter dashboard password..." required autocomplete="current-password">
+            <div style="font-size: 0.8rem; color: var(--color-primary); margin-top: 0.5rem;">
+              Class default password: <code style="background: rgba(56, 189, 248, 0.15); padding: 0.15rem 0.4rem; border-radius: 4px;">admin123</code>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" id="adminLoginSubmitBtn" style="width: 100%; margin-top: 1rem;">
+            Unlock Dashboard
+          </button>
+        </form>
+      </section>
+
+      <!-- Authenticated Dashboard View -->
+      <section class="admin-dashboard-view" id="adminDashboardView">
+        
+        <!-- Dashboard Top Header Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
+          <div>
+            <div class="section-eyebrow">Administrative Suite</div>
+            <h1 style="font-size: 2.25rem;">Inquiry Management</h1>
+            <p style="font-size: 0.95rem;">Persistent message log powered by server-side Node.js and <code style="color: var(--color-primary);">data/contactReceived.json</code>.</p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; align-items: center;">
+            <button id="refreshBtn" class="btn btn-secondary btn-sm">↻ Refresh Data</button>
+            <button id="logoutBtn" class="btn btn-danger btn-sm">Sign Out</button>
+          </div>
+        </div>
+
+        <!-- 4 Summary Stat Cards -->
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card primary" id="statTotalCard">
+            <div class="stat-label">Total Submissions</div>
+            <div class="stat-value" id="statTotalValue">0</div>
+          </div>
+          <div class="stat-card warning" id="statNewCard">
+            <div class="stat-label">New / Pending</div>
+            <div class="stat-value" id="statNewValue" style="color: #fbbf24;">0</div>
+          </div>
+          <div class="stat-card success" id="statRepliedCard">
+            <div class="stat-label">Replied Messages</div>
+            <div class="stat-value" id="statRepliedValue" style="color: #34d399;">0</div>
+          </div>
+          <div class="stat-card accent" id="statRateCard">
+            <div class="stat-label">Response Rate</div>
+            <div class="stat-value" id="statRateValue" style="color: var(--color-primary);">0%</div>
+          </div>
+        </div>
+
+        <!-- Analytics Chart -->
+        <div class="admin-chart-section" id="adminChartSection">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <h3 style="margin-bottom: 0.2rem;">Contact Inquiries by Reason</h3>
+              <p style="font-size: 0.85rem;">Breakdown across Comments, Questions, Partnerships, Opportunities, and Other.</p>
+            </div>
+            <span class="badge-status new" style="background: rgba(56, 189, 248, 0.15); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">
+              Live Chart.js
+            </span>
+          </div>
+          <div class="chart-container-wrapper">
+            <canvas id="reasonsChart"></canvas>
+          </div>
+        </div>
+
+        <!-- Messages Section & Filters -->
+        <div class="admin-messages-section" id="adminMessagesSection">
+          <div class="filter-toolbar" id="filterToolbar">
+            <div class="filter-pills" id="filterPills">
+              <button class="filter-btn active" data-filter="all" id="filterAll">All (<span id="countAll">0</span>)</button>
+              <button class="filter-btn" data-filter="new" id="filterNew">New (<span id="countNew">0</span>)</button>
+              <button class="filter-btn" data-filter="replied" id="filterReplied">Replied (<span id="countReplied">0</span>)</button>
+            </div>
+            <div style="font-size: 0.85rem; color: var(--color-text-light);">
+              Data storage: <code style="color: var(--color-primary);">data/contactReceived.json</code>
+            </div>
+          </div>
+
+          <!-- Messages Container -->
+          <div class="messages-list" id="messagesListContainer">
+            <!-- Dynamically populated by admin.js -->
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Universal Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container" id="footerContainer">
+      <div class="footer-content" id="footerContent">
+        <div>
+          <div style="font-weight: 700; font-size: 1.15rem; color: #ffffff; margin-bottom: 0.25rem;">Michael Villalobos</div>
+          <div class="footer-copy">© 2026 Michael Villalobos. Web Development Student Portfolio.</div>
+        </div>
+        <nav class="footer-nav" id="footerNav">
+          <a href="index.html" id="footerHome">Home</a>
+          <a href="media.html" id="footerMedia">Media</a>
+          <a href="future.html" id="footerFuture">Future</a>
+          <a href="projects.html" id="footerProjects">Projects</a>
+          <a href="experience.html" id="footerExperience">Experience</a>
+          <a href="admin.html" id="footerAdmin">Admin</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="admin.js"></script>
+</body>
+</html>
