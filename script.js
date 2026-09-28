@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initNameAnimation();
   initTextBlockReveal();
   initFloating3DParallax();
+  initProjectImageUploader();
+  initBikeImageUploader();
+  initPortraitUploader();
+  initHobbyUploaders();
 });
 
 /**
@@ -683,4 +687,315 @@ function initFloating3DParallax() {
   requestAnimationFrame(renderParallax);
 }
 
+/**
+ * Project Image Uploader
+ * Allows the user to select or drag-and-drop their exact screenshot file
+ * and uploads it to /api/upload-image to save as images/curated_gallery_screenshot.png
+ */
+function initProjectImageUploader() {
+  const fileInput = document.getElementById('projectScreenshotFileInput');
+  const previewImg = document.getElementById('homeCuratedGalleryImage');
+  const dropBox = document.getElementById('projectScreenshotContainer');
+  const uploadBar = document.getElementById('projectImgUploadBar');
 
+  if (!fileInput || !previewImg) return;
+
+  async function handleFile(file) {
+    if (!file || !file.type.startsWith('image/')) {
+      alert('Please upload an image file (PNG, JPG, or WebP).');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      const dataUrl = e.target.result;
+      previewImg.src = dataUrl;
+
+      // Persist to server
+      try {
+        if (uploadBar) {
+          uploadBar.style.opacity = '0.7';
+        }
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            filename: 'curated_gallery_screenshot.png',
+            dataUrl: dataUrl
+          })
+        });
+        const json = await res.json();
+        if (json.success) {
+          previewImg.src = json.url + '?t=' + Date.now();
+          if (uploadBar) {
+            uploadBar.innerHTML = `<span style="font-size: 0.8rem; color: #38bdf8; font-weight: 600;">✓ Exact screenshot saved successfully!</span> <label for="projectScreenshotFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; font-size: 0.78rem; padding: 0.25rem 0.65rem;"><span>Replace File</span><input type="file" id="projectScreenshotFileInput" accept="image/*" style="display: none;"></label>`;
+            initProjectImageUploader();
+          }
+        }
+      } catch (err) {
+        console.error('Failed to save image to server:', err);
+      } finally {
+        if (uploadBar) {
+          uploadBar.style.opacity = '1';
+        }
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files && e.target.files[0]) {
+      handleFile(e.target.files[0]);
+    }
+  });
+
+  if (dropBox) {
+    dropBox.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropBox.style.outline = '2px dashed #38bdf8';
+    });
+    dropBox.addEventListener('dragleave', () => {
+      dropBox.style.outline = 'none';
+    });
+    dropBox.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropBox.style.outline = 'none';
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleFile(e.dataTransfer.files[0]);
+      }
+    });
+  }
+}
+
+/**
+ * Direct file handler for Bike image slot
+ * Saves the exact original file into images/bike.jpg without any modifications or AI
+ */
+function initBikeImageUploader() {
+  const fileInput = document.getElementById('bikeFileInput');
+  const previewImg = document.getElementById('bikeImagePreview');
+  const dropBox = document.getElementById('bikeDropBox');
+  const uploadBar = document.getElementById('bikeUploadBar');
+  const card = document.getElementById('mediaCard2');
+
+  if (!fileInput || !previewImg) return;
+
+  async function handleBikeFile(file) {
+    if (!file || !file.type.startsWith('image/')) {
+      alert('Please select an image file (e.g. IMG_6843.jpeg).');
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async (e) => {
+      const dataUrl = e.target.result;
+      previewImg.src = dataUrl;
+      if (card) {
+        card.dataset.src = dataUrl;
+      }
+
+      try {
+        if (uploadBar) {
+          uploadBar.style.opacity = '0.7';
+        }
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            filename: 'bike.jpg',
+            dataUrl: dataUrl
+          })
+        });
+        const json = await res.json();
+        if (json.success) {
+          const cleanUrl = '/images/bike.jpg?t=' + Date.now();
+          previewImg.src = cleanUrl;
+          if (card) {
+            card.dataset.src = '/images/bike.jpg';
+          }
+          if (uploadBar) {
+            uploadBar.innerHTML = `<span style="font-size: 0.76rem; color: #38bdf8; font-weight: 600;">✓ Saved exact image: <code>images/bike.jpg</code></span> <label for="bikeFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; font-size: 0.74rem; padding: 0.2rem 0.55rem;"><span>Replace</span><input type="file" id="bikeFileInput" accept="image/*" style="display: none;"></label>`;
+            initBikeImageUploader();
+          }
+        }
+      } catch (err) {
+        console.error('Failed to save bike image:', err);
+      } finally {
+        if (uploadBar) {
+          uploadBar.style.opacity = '1';
+        }
+      }
+    };
+    reader.readAsDataURL(file);
+  }
+
+  fileInput.addEventListener('change', (e) => {
+    if (e.target.files && e.target.files[0]) {
+      handleBikeFile(e.target.files[0]);
+    }
+  });
+
+  if (dropBox) {
+    dropBox.addEventListener('dragover', (e) => {
+      e.preventDefault();
+      dropBox.style.outline = '2px dashed #38bdf8';
+    });
+    dropBox.addEventListener('dragleave', () => {
+      dropBox.style.outline = 'none';
+    });
+    dropBox.addEventListener('drop', (e) => {
+      e.preventDefault();
+      dropBox.style.outline = 'none';
+      if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+        handleBikeFile(e.dataTransfer.files[0]);
+      }
+    });
+  }
+}
+
+/**
+ * Direct file handler for Michael's personal portrait
+ * Uploads exact uncompressed photo to /assets/images/michael_portrait.jpg
+ */
+function initPortraitUploader() {
+  const fileInput = document.getElementById('portraitFileInput');
+  const portraitImg = document.getElementById('studentPortraitImage');
+  const headerAvatar = document.getElementById('headerAvatar');
+  if (!fileInput || !portraitImg) return;
+
+  fileInput.addEventListener('change', async (e) => {
+    if (!e.target.files || !e.target.files[0]) return;
+    const file = e.target.files[0];
+    const statusEl = document.getElementById('portraitUploadStatus');
+    if (statusEl) {
+      statusEl.style.display = 'block';
+      statusEl.textContent = `Loading ${file.name}...`;
+    }
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      const dataUrl = event.target.result;
+      portraitImg.src = dataUrl;
+      if (headerAvatar) headerAvatar.src = dataUrl;
+
+      // Also update any avatar elements on the current page
+      document.querySelectorAll('.brand-avatar').forEach(img => {
+        img.src = dataUrl;
+      });
+
+      try {
+        const res = await fetch('/api/upload-image', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            filename: 'michael_portrait.jpg',
+            dataUrl: dataUrl
+          })
+        });
+        const json = await res.json();
+        if (json.success && statusEl) {
+          statusEl.textContent = '✓ Real photo saved successfully!';
+        }
+      } catch (err) {
+        console.error('Portrait save error:', err);
+        if (statusEl) {
+          statusEl.textContent = 'Uploaded to browser preview.';
+        }
+      }
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+/**
+ * Direct file handler for Hobby media slots (Friends, Movies, Soccer)
+ */
+function initHobbyUploaders() {
+  const slots = [
+    { fileInputId: 'friendsFileInput', previewImgId: 'friendsImagePreview', dropBoxId: 'friendsDropBox', uploadBarId: 'friendsUploadBar', cardId: 'mediaCard3', filename: 'outside_friends.jpg' },
+    { fileInputId: 'moviesFileInput', previewImgId: 'moviesImagePreview', dropBoxId: 'moviesDropBox', uploadBarId: 'moviesUploadBar', cardId: 'mediaCard4', filename: 'watching_movies.jpg' },
+    { fileInputId: 'soccerFileInput', previewImgId: 'soccerImagePreview', dropBoxId: 'soccerDropBox', uploadBarId: 'soccerUploadBar', cardId: 'mediaCard6', filename: 'soccer.jpg' }
+  ];
+
+  slots.forEach(({ fileInputId, previewImgId, dropBoxId, uploadBarId, cardId, filename }) => {
+    const fileInput = document.getElementById(fileInputId);
+    const previewImg = document.getElementById(previewImgId);
+    const dropBox = document.getElementById(dropBoxId);
+    const uploadBar = document.getElementById(uploadBarId);
+    const card = document.getElementById(cardId);
+
+    if (!fileInput || !previewImg) return;
+
+    async function handleFile(file) {
+      if (!file || !file.type.startsWith('image/')) {
+        alert('Please select an image file (PNG, JPG, or WebP).');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        const dataUrl = e.target.result;
+        previewImg.src = dataUrl;
+        if (card) {
+          card.dataset.src = dataUrl;
+        }
+
+        try {
+          if (uploadBar) {
+            uploadBar.style.opacity = '0.7';
+          }
+          const res = await fetch('/api/upload-image', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              filename: filename,
+              dataUrl: dataUrl
+            })
+          });
+          const json = await res.json();
+          if (json.success) {
+            const cleanUrl = `/images/${filename}?t=` + Date.now();
+            previewImg.src = cleanUrl;
+            if (card) {
+              card.dataset.src = `/images/${filename}`;
+            }
+            if (uploadBar) {
+              uploadBar.innerHTML = `<span style="font-size: 0.76rem; color: #38bdf8; font-weight: 600;">✓ Saved photo: <code>images/${filename}</code></span> <label for="${fileInputId}" class="btn btn-secondary btn-sm" style="cursor: pointer; font-size: 0.74rem; padding: 0.2rem 0.55rem;"><span>Replace</span><input type="file" id="${fileInputId}" accept="image/*" style="display: none;"></label>`;
+              initHobbyUploaders();
+            }
+          }
+        } catch (err) {
+          console.error(`Failed to save ${filename}:`, err);
+        } finally {
+          if (uploadBar) {
+            uploadBar.style.opacity = '1';
+          }
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files && e.target.files[0]) {
+        handleFile(e.target.files[0]);
+      }
+    });
+
+    if (dropBox) {
+      dropBox.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropBox.style.outline = '2px dashed #38bdf8';
+      });
+      dropBox.addEventListener('dragleave', () => {
+        dropBox.style.outline = 'none';
+      });
+      dropBox.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropBox.style.outline = 'none';
+        if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+          handleFile(e.dataTransfer.files[0]);
+        }
+      });
+    }
+  });
+}

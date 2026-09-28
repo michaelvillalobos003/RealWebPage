@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="spaceBg" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#0b1329" />
+      <stop offset="50%" stop-color="#040814" />
+      <stop offset="100%" stop-color="#02040a" />
+    </radialGradient>
+    <!-- Card Gradients -->
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0d182e" />
+      <stop offset="100%" stop-color="#060c18" />
+    </linearGradient>
+    <linearGradient id="cyanBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.1" />
+    </linearGradient>
+    <!-- Glow filter -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Cosmic Background -->
+  <rect width="1200" height="900" fill="url(#spaceBg)"/>
+
+  <!-- Star Field Particles -->
+  <g fill="#ffffff" opacity="0.65">
+    <circle cx="80" cy="90" r="1.5"/><circle cx="220" cy="50" r="1"/><circle cx="450" cy="80" r="2"/>
+    <circle cx="780" cy="40" r="1"/><circle cx="950" cy="110" r="1.5"/><circle cx="1120" cy="70" r="2"/>
+    <circle cx="150" cy="280" r="1.2"/><circle cx="340" cy="350" r="1.8"/><circle cx="860" cy="310" r="1.4"/>
+    <circle cx="1040" cy="420" r="2"/><circle cx="70" cy="560" r="1.5"/><circle cx="280" cy="620" r="1"/>
+    <circle cx="580" cy="520" r="1.5"/><circle cx="920" cy="670" r="1.8"/><circle cx="1140" cy="600" r="1.2"/>
+    <circle cx="180" cy="810" r="1.6"/><circle cx="490" cy="840" r="1.2"/><circle cx="780" cy="820" r="2"/>
+    <circle cx="1060" cy="850" r="1"/>
+  </g>
+
+  <!-- Top Pill / Controls Header -->
+  <g transform="translate(600, 45)" text-anchor="middle">
+    <!-- Roaming Background pill -->
+    <rect x="-140" y="0" width="280" height="26" rx="13" fill="#111827" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <circle cx="-120" cy="13" r="4" fill="#64748b"/>
+    <text x="0" y="17" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" letter-spacing="0.5">Roaming Background • Click to Regroup Title</text>
+
+    <!-- Main Title -->
+    <text x="0" y="55" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="15" font-weight="700" letter-spacing="2">MICHAEL'S COLLECTION • CURATED GALLERY</text>
+    
+    <!-- Shader Pill -->
+    <rect x="-105" y="68" width="130" height="22" rx="11" fill="rgba(56,189,248,0.12)" stroke="#38bdf8" stroke-width="1"/>
+    <circle cx="-90" cy="79" r="3.5" fill="#38bdf8"/>
+    <text x="-35" y="83" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="600">Shader Background: Active</text>
+
+    <rect x="35" y="68" width="75" height="22" rx="11" fill="#111827" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+    <text x="72" y="83" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10">Intensity: Subtle</text>
+  </g>
+
+  <!-- 3x3 Card Grid Mockup -->
+  <!-- ROW 1 -->
+  <!-- Card 1: Spider-Man -->
+  <g transform="translate(210, 150)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#1e293b"/>
+    <!-- Spider-man illustration abstract placeholder -->
+    <circle cx="120" cy="70" r="38" fill="#dc2626"/>
+    <path d="M 105 60 Q 120 75 110 82 Z" fill="#ffffff"/>
+    <path d="M 135 60 Q 120 75 130 82 Z" fill="#ffffff"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">MARVEL UNIVERSE</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#1</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Spider-Man</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">Peter Parker leaps between Manhattan's soaring...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Hero</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- Card 2: Gilberto Mora -->
+  <g transform="translate(480, 150)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#064e3b"/>
+    <!-- Soccer jersey silhouette -->
+    <circle cx="120" cy="50" r="16" fill="#fed7aa"/>
+    <path d="M 95 68 L 145 68 L 140 115 L 100 115 Z" fill="#15803d"/>
+    <text x="120" y="98" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="800" text-anchor="middle">10</text>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">SOCCER PHENOM</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#2</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Gilberto Mora</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">Widely celebrated young soccer talent with Tijua...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Midfielder</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- Card 3: Sheriff Woody -->
+  <g transform="translate(750, 150)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#78350f"/>
+    <!-- Woody Cowboy hat & face -->
+    <ellipse cx="120" cy="52" rx="35" ry="10" fill="#92400e"/>
+    <circle cx="120" cy="72" r="18" fill="#fde68a"/>
+    <rect x="105" y="92" width="30" height="25" fill="#facc15"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">DISNEY / PIXAR</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#3</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Sheriff Woody</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">The courageous, kind-hearted vintage pull-string...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Classic Animation</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- Card 4: New York City -->
+  <g transform="translate(210, 395)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#0f172a"/>
+    <!-- Skyline silhouette -->
+    <rect x="35" y="55" width="22" height="65" fill="#475569"/>
+    <rect x="65" y="35" width="30" height="85" fill="#64748b"/>
+    <rect x="105" y="20" width="28" height="100" fill="#94a3b8"/>
+    <rect x="140" y="45" width="26" height="75" fill="#64748b"/>
+    <rect x="175" y="60" width="32" height="60" fill="#475569"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">TRAVEL &amp; URBAN</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#4</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">New York City</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">The iconic Empire City stands as a global crossroads...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Manhattan</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- Card 5: Washington, D.C. -->
+  <g transform="translate(480, 395)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#1e293b"/>
+    <!-- Monument silhouette & cherry blossoms -->
+    <polygon points="120,25 116,115 124,115" fill="#f8fafc"/>
+    <circle cx="85" cy="80" r="18" fill="#f472b6" opacity="0.6"/>
+    <circle cx="155" cy="85" r="22" fill="#f472b6" opacity="0.6"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">TRAVEL &amp; HISTORY</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#5</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Washington, D.C.</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">The stately capital of the United States, defined by...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">National Mall</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- Card 6: Mexico (Chichen Itza) -->
+  <g transform="translate(750, 395)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#292524"/>
+    <!-- Pyramid steps -->
+    <polygon points="120,40 75,115 165,115" fill="#a8a29e"/>
+    <rect x="110" y="32" width="20" height="12" fill="#d6d3d1"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">TRAVEL &amp; CULTURE</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#6</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Mexico</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">A land of extraordinary contrasts where thousands...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Latin America</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- ROW 3 -->
+  <!-- Card 7: Street Tacos -->
+  <g transform="translate(210, 640)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#1c1917"/>
+    <!-- Taco plate -->
+    <circle cx="120" cy="70" r="42" fill="#22c55e" opacity="0.3"/>
+    <ellipse cx="100" cy="70" rx="28" ry="18" fill="#facc15"/>
+    <ellipse cx="140" cy="70" rx="28" ry="18" fill="#facc15"/>
+    <circle cx="120" cy="70" r="10" fill="#dc2626"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">MEXICAN GASTRONOMY</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#7</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Street Tacos</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">The quintessential cornerstone of Mexican street...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Street Food</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- Card 8: Huevos con Chorizo -->
+  <g transform="translate(480, 640)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#1c1917"/>
+    <!-- Plate with eggs, chorizo and beans -->
+    <circle cx="120" cy="70" r="45" fill="#f8fafc" opacity="0.85"/>
+    <ellipse cx="105" cy="70" rx="22" ry="18" fill="#ea580c"/>
+    <ellipse cx="135" cy="72" rx="20" ry="16" fill="#78350f"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">MEXICAN GASTRONOMY</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#8</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Huevos con Chorizo</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">A hearty and beloved traditional breakfast enjoyed...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Traditional Breakfast</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+
+  <!-- Card 9: Elote Callejero -->
+  <g transform="translate(750, 640)">
+    <rect width="240" height="225" rx="14" fill="url(#cardBg)" stroke="url(#cyanBorder)" stroke-width="1.2"/>
+    <rect x="10" y="10" width="220" height="120" rx="8" fill="#1c1917"/>
+    <!-- Corn on a stick -->
+    <line x1="85" y1="105" x2="115" y2="75" stroke="#a16207" stroke-width="5" stroke-linecap="round"/>
+    <ellipse cx="135" cy="55" rx="28" ry="14" transform="rotate(-40 135 55)" fill="#fef08a" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="3 3"/>
+    <!-- Card text -->
+    <text x="14" y="146" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="700" letter-spacing="1">MEXICAN GASTRONOMY</text>
+    <text x="215" y="146" fill="#64748b" font-family="-apple-system, sans-serif" font-size="9" text-anchor="end">#9</text>
+    <text x="14" y="166" fill="#ffffff" font-family="-apple-system, sans-serif" font-size="13" font-weight="700">Elote Callejero</text>
+    <text x="14" y="182" fill="#94a3b8" font-family="-apple-system, sans-serif" font-size="8.5">Sweet Mexican street corn grilled on an open flame...</text>
+    <text x="14" y="212" fill="#64748b" font-family="-apple-system, sans-serif" font-size="8">Antojito</text>
+    <text x="225" y="212" fill="#38bdf8" font-family="-apple-system, sans-serif" font-size="8.5" font-weight="600" text-anchor="end">Click to open →</text>
+  </g>
+</svg>

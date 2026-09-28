@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects & Work | Michael Villalobos</title>
-  <meta name="description" content="Technical creations, web applications, and programming experiments by Michael Villalobos.">
-  <meta property="og:title" content="Projects & Work | Michael Villalobos">
-  <meta property="og:description" content="Technical creations, web applications, and programming experiments by Michael Villalobos.">
+  <meta name="description" content="Michael's Collection · Curated Gallery — An interactive cosmic gallery web project by Michael Villalobos, Web Design & Coding Student at Grossmont High School.">
+  <meta property="og:title" content="Michael's Collection · Curated Gallery | Michael Villalobos">
+  <meta property="og:description" content="An interactive cosmic gallery web project showcasing Marvel, soccer stars, Pixar, cityscapes, Mexican heritage, and traditional gastronomy.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="projectsPageBody">
@@ -15,7 +15,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container" id="headerContainer">
       <a href="index.html" class="brand-link" id="brandLink">
-        <img src="assets/images/placeholder_portrait.svg" alt="Michael Villalobos" class="brand-avatar" id="headerAvatar">
+        <img src="assets/images/michael_portrait.jpg" onerror="this.onerror=null; this.src='assets/images/placeholder_portrait.svg';" alt="Michael Villalobos" class="brand-avatar" id="headerAvatar">
         <span>Michael Villalobos</span>
       </a>
       <nav class="site-nav" id="siteNav">
@@ -32,97 +32,297 @@
   <main class="main-content" id="projectsMainContent">
     <div class="container" id="projectsContainer">
 
-      <section class="section">
+      <!-- Section Header -->
+      <section class="section" style="padding-bottom: 1.5rem;">
         <div class="section-header" id="projectsHeader">
-          <div class="section-eyebrow">Choice Topic #1</div>
+          <div class="section-eyebrow">Signature Coursework Build · Choice Topic #1</div>
           <h1>
             <span class="text-block-reveal" data-block-color="#38bdf8" data-duration="0.75">
-              <span class="reveal-text">Featured Projects</span>
+              <span class="reveal-text">Michael's Collection</span>
               <span class="reveal-block"></span>
             </span>
           </h1>
-          <p>A curated showcase of technical projects and interactive applications. Temporary placeholders and lorem ipsum text allow you to add your specific class builds.</p>
+          <p>An interactive, cosmic-themed curated digital gallery engineered by Michael Villalobos. A deep dive into the design architecture, visual exhibits, shader animations, and technical mastery of this flagship coursework project.</p>
         </div>
 
-        <div class="grid-3" id="projectsGrid">
+        <!-- Featured Project Hero Showcase Card -->
+        <div class="card" id="projectShowcaseHero" style="max-width: 1020px; margin: 0 auto 2.5rem; padding: 0; overflow: hidden; border: 1px solid rgba(56, 189, 248, 0.3); background: linear-gradient(180deg, rgba(14, 23, 42, 0.95) 0%, rgba(8, 14, 28, 0.95) 100%); box-shadow: 0 12px 40px -10px rgba(56, 189, 248, 0.25);">
           
-          <!-- Project Card 1: The Current Portfolio Web App -->
-          <div class="card" id="projectCard1">
-            <div style="margin-bottom: 1rem; border-radius: var(--radius-md); overflow: hidden;">
-              <img src="assets/images/placeholder_media.svg" alt="Project 1 Preview" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            </div>
-            <div class="card-header">
-              <span class="badge-status new" style="background: rgba(56, 189, 248, 0.15); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">Featured Project</span>
-              <h3 style="margin-top: 0.6rem;">Personal Portfolio & Admin Portal</h3>
-            </div>
-            <div class="card-body">
-              <p style="margin-bottom: 1.25rem;">The current 6-page interactive student website with Light Blue and Black styling, persistent contact inquiries in JSON, and an authenticated administrative dashboard.</p>
-              
-              <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-                <span class="badge-reason">HTML5</span>
-                <span class="badge-reason">CSS Variables</span>
-                <span class="badge-reason">JavaScript</span>
-                <span class="badge-reason">Node.js Express</span>
-              </div>
-
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="index.html" class="btn btn-secondary btn-sm">Explore Site ↗</a>
-                <span style="font-size: 0.8rem; color: #34d399; font-weight: 600;">● Active Build</span>
-              </div>
+          <!-- High-Resolution Project Preview / Screenshot -->
+          <div id="projectScreenshotContainer" style="width: 100%; max-height: 480px; overflow: hidden; background: #030712; position: relative; border-bottom: 1px solid rgba(56, 189, 248, 0.2);">
+            <img src="images/curated_gallery_screenshot.png" onerror="this.onerror=null; this.src='images/curated_gallery_screenshot.svg';" alt="Michael's Collection Curated Gallery Web Project Screenshot" id="homeCuratedGalleryImage" style="width: 100%; height: 100%; max-height: 480px; object-fit: cover; display: block;" loading="lazy">
+            <div style="position: absolute; bottom: 1rem; right: 1rem; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(8px); border: 1px solid rgba(56, 189, 248, 0.3); padding: 0.35rem 0.85rem; border-radius: var(--radius-full); font-size: 0.8rem; color: #38bdf8; font-weight: 600;">
+              ● Interactive Starfield &amp; Gallery
             </div>
           </div>
 
-          <!-- Project Card 2: Interactive Class Experiment -->
-          <div class="card" id="projectCard2">
-            <div style="margin-bottom: 1rem; border-radius: var(--radius-md); overflow: hidden;">
-              <img src="assets/images/placeholder_media.svg" alt="Project 2 Preview" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            </div>
-            <div class="card-header">
-              <span class="badge-status" style="background: rgba(255, 255, 255, 0.05); color: var(--color-text-muted); border: 1px solid rgba(255,255,255,0.1);">Template Placeholder</span>
-              <h3 style="margin-top: 0.6rem;">[Placeholder: Interactive Web Utility]</h3>
-            </div>
-            <div class="card-body">
-              <p style="margin-bottom: 1.25rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-              
-              <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-                <span class="badge-reason">JavaScript</span>
-                <span class="badge-reason">DOM Events</span>
-                <span class="badge-reason">Local State</span>
-              </div>
-
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="#" class="btn btn-secondary btn-sm">[Demo Link] ↗</a>
-                <span style="font-size: 0.8rem; color: var(--color-text-light);">Placeholder</span>
-              </div>
-            </div>
+          <!-- Project Screenshot Upload Bar -->
+          <div class="project-img-upload-bar" id="projectImgUploadBar" style="padding: 0.65rem 1.5rem; background: rgba(56, 189, 248, 0.05); border-bottom: 1px solid rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 0.82rem; color: #38bdf8; font-weight: 600;">
+              ✓ Active Preview: <code>images/curated_gallery_screenshot.png</code>
+            </span>
+            <label for="projectScreenshotFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; padding: 0.25rem 0.75rem;">
+              <span>Upload / Replace Screenshot</span>
+              <input type="file" id="projectScreenshotFileInput" accept="image/png, image/jpeg, image/webp" style="display: none;">
+            </label>
           </div>
 
-          <!-- Project Card 3: Game / Logic Project -->
-          <div class="card" id="projectCard3">
-            <div style="margin-bottom: 1rem; border-radius: var(--radius-md); overflow: hidden;">
-              <img src="assets/images/placeholder_media.svg" alt="Project 3 Preview" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
-            </div>
-            <div class="card-header">
-              <span class="badge-status" style="background: rgba(255, 255, 255, 0.05); color: var(--color-text-muted); border: 1px solid rgba(255,255,255,0.1);">Template Placeholder</span>
-              <h3 style="margin-top: 0.6rem;">[Placeholder: Browser Game / Logic App]</h3>
-            </div>
-            <div class="card-body">
-              <p style="margin-bottom: 1.25rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-              
-              <div style="display: flex; gap: 0.45rem; flex-wrap: wrap; margin-bottom: 1.25rem;">
-                <span class="badge-reason">HTML5 Canvas</span>
-                <span class="badge-reason">Game Loop</span>
-                <span class="badge-reason">Algorithms</span>
+          <!-- Hero Details & Metadata -->
+          <div style="padding: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.25rem;">
+              <div>
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem;">
+                  <span class="badge-status new" style="background: rgba(56, 189, 248, 0.15); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3); font-weight: 700;">● Coursework Build</span>
+                  <span style="font-size: 0.82rem; color: #34d399; font-weight: 600;">Grossmont High School</span>
+                </div>
+                <h2 style="font-size: 2rem; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 0.35rem;">
+                  Michael's Collection · Curated Gallery
+                </h2>
+                <div style="color: var(--color-primary); font-size: 1.05rem; font-weight: 600;">
+                  Interactive Web Application &amp; Cosmic Digital Exhibition
+                </div>
               </div>
 
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <a href="#" class="btn btn-secondary btn-sm">[Demo Link] ↗</a>
-                <span style="font-size: 0.8rem; color: var(--color-text-light);">Placeholder</span>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span class="badge-status" style="background: rgba(34, 197, 94, 0.12); color: #34d399; border: 1px solid rgba(34, 197, 94, 0.25); font-weight: 600;">Status: Completed</span>
               </div>
             </div>
+
+            <!-- Project Summary -->
+            <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 1.5rem;">
+              <strong>Michael's Collection</strong> is a signature interactive web project developed as part of the Web Design &amp; Coding curriculum at Grossmont High School. Designed to unite advanced visual aesthetics with intuitive front-end architecture, the application immerses visitors in a dynamic cosmic starfield while presenting curated thematic cards celebrating personal interests, cultural roots, sports heroes, and world landmarks.
+            </p>
+
+            <!-- Technical Specifications Grid -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; padding: 1.25rem; background: rgba(3, 7, 18, 0.6); border-radius: var(--radius-md); border: 1px solid rgba(255, 255, 255, 0.06); margin-bottom: 1.5rem;">
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-light); margin-bottom: 0.25rem;">Visual Engine</div>
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.98rem;">Cosmic Starfield &amp; Shader</div>
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-light); margin-bottom: 0.25rem;">Layout Architecture</div>
+                <div style="font-weight: 700; color: var(--color-primary); font-size: 0.98rem;">CSS Grid &amp; Glassmorphism</div>
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-light); margin-bottom: 0.25rem;">Interaction Design</div>
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.98rem;">Modal Lightboxes &amp; 60fps FX</div>
+              </div>
+              <div>
+                <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-text-light); margin-bottom: 0.25rem;">Core Stack</div>
+                <div style="font-weight: 700; color: #ffffff; font-size: 0.98rem;">HTML5 · CSS3 · ES6+ JS</div>
+              </div>
+            </div>
+
+            <!-- Technology Badges -->
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="badge-reason" style="background: rgba(56, 189, 248, 0.12); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">HTML5 Semantic Markup</span>
+              <span class="badge-reason" style="background: rgba(56, 189, 248, 0.12); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">CSS Grid Layouts</span>
+              <span class="badge-reason" style="background: rgba(56, 189, 248, 0.12); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">WebGL / Shader Canvas</span>
+              <span class="badge-reason" style="background: rgba(56, 189, 248, 0.12); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">Backdrop Filter Blur</span>
+              <span class="badge-reason" style="background: rgba(56, 189, 248, 0.12); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">JavaScript Event Listeners</span>
+              <span class="badge-reason" style="background: rgba(56, 189, 248, 0.12); color: var(--color-primary); border-color: rgba(56, 189, 248, 0.3);">Fluid Responsive Design</span>
+            </div>
+
           </div>
-
         </div>
+
+        <!-- Section 2: The 6 Curated Exhibits Breakdown -->
+        <div style="max-width: 1020px; margin: 0 auto 3rem;">
+          <div style="margin-bottom: 1.5rem; text-align: left;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.35rem;">Curated Content</div>
+            <h3 style="font-size: 1.6rem; color: #ffffff;">The 6 Signature Gallery Collections</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">Each curated section of Michael's Collection showcases distinct visual storytelling, tailored styling, and personal significance.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;">
+
+            <!-- Exhibit 1: Marvel & Spider-Man -->
+            <div class="card" style="padding: 1.5rem; border-top: 3px solid #ef4444;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span class="badge-status" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3);">Pop Culture &amp; Heroes</span>
+                <span style="font-size: 0.78rem; color: var(--color-text-light);">Exhibit 01</span>
+              </div>
+              <h4 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 0.5rem;">Marvel Icons · Spider-Man</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                Dynamic spotlight celebrating Spider-Man and cinematic Marvel heroes. Explores themes of responsibility, perseverance, and visual character design with bold red-and-blue accents and interactive hover glow.
+              </p>
+              <div style="font-size: 0.8rem; color: #f87171; font-weight: 600;">
+                Focus: Character Lore · Action Geometry · Contrast Styling
+              </div>
+            </div>
+
+            <!-- Exhibit 2: Gilberto Mora & Soccer Stars -->
+            <div class="card" style="padding: 1.5rem; border-top: 3px solid #38bdf8;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span class="badge-status" style="background: rgba(56, 189, 248, 0.15); color: var(--color-primary); border: 1px solid rgba(56, 189, 248, 0.3);">Athletics &amp; Inspiration</span>
+                <span style="font-size: 0.78rem; color: var(--color-text-light);">Exhibit 02</span>
+              </div>
+              <h4 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 0.5rem;">Soccer Phenom · Gilberto Mora</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                Honoring the talent and rise of Mexican soccer star Gilberto Mora. Highlights passion for the beautiful game, matchday determination, athletic dedication, and soccer culture on the pitch.
+              </p>
+              <div style="font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">
+                Focus: Athletic Precision · Movement · Modern Sports Media
+              </div>
+            </div>
+
+            <!-- Exhibit 3: Pixar Animation -->
+            <div class="card" style="padding: 1.5rem; border-top: 3px solid #fbbf24;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span class="badge-status" style="background: rgba(251, 191, 36, 0.15); color: #fbbf24; border: 1px solid rgba(251, 191, 36, 0.3);">Cinema &amp; Animation</span>
+                <span style="font-size: 0.78rem; color: var(--color-text-light);">Exhibit 03</span>
+              </div>
+              <h4 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 0.5rem;">Pixar Visual Storytelling</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                Appreciation for computer-generated imagery, animation cinematography, and heartfelt narrative storytelling from Pixar classics that inspire digital creativity and world-building.
+              </p>
+              <div style="font-size: 0.8rem; color: #fbbf24; font-weight: 600;">
+                Focus: Color Theory · Digital Lighting · Emotional Artistry
+              </div>
+            </div>
+
+            <!-- Exhibit 4: Cityscapes (NYC & D.C.) -->
+            <div class="card" style="padding: 1.5rem; border-top: 3px solid #a855f7;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span class="badge-status" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);">Urban Architecture</span>
+                <span style="font-size: 0.78rem; color: var(--color-text-light);">Exhibit 04</span>
+              </div>
+              <h4 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 0.5rem;">Iconic Cityscapes · NYC &amp; D.C.</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                Showcasing the historic grandeur and vertical energy of American metropolises: the skyscrapers and illuminated nights of New York City paired with the monuments and history of Washington, D.C.
+              </p>
+              <div style="font-size: 0.8rem; color: #c084fc; font-weight: 600;">
+                Focus: Architectural Perspective · Skylines · Urban Lighting
+              </div>
+            </div>
+
+            <!-- Exhibit 5: Mexican Heritage & Landmarks -->
+            <div class="card" style="padding: 1.5rem; border-top: 3px solid #34d399;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span class="badge-status" style="background: rgba(52, 211, 153, 0.15); color: #34d399; border: 1px solid rgba(52, 211, 153, 0.3);">Cultural Heritage</span>
+                <span style="font-size: 0.78rem; color: var(--color-text-light);">Exhibit 05</span>
+              </div>
+              <h4 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 0.5rem;">Mexican Landmarks · Chichen Itza</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                Celebrating ancestral roots, archaeological wonders of Mexico such as Chichen Itza, ancient Mayan stone craft, and the enduring cultural pride connecting heritage to modern digital expression.
+              </p>
+              <div style="font-size: 0.8rem; color: #34d399; font-weight: 600;">
+                Focus: Cultural Identity · Monumental History · Heritage Pride
+              </div>
+            </div>
+
+            <!-- Exhibit 6: Traditional Gastronomy -->
+            <div class="card" style="padding: 1.5rem; border-top: 3px solid #f97316;">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                <span class="badge-status" style="background: rgba(249, 115, 22, 0.15); color: #fb923c; border: 1px solid rgba(249, 115, 22, 0.3);">Culinary Arts</span>
+                <span style="font-size: 0.78rem; color: var(--color-text-light);">Exhibit 06</span>
+              </div>
+              <h4 style="font-size: 1.2rem; color: #ffffff; margin-bottom: 0.5rem;">Traditional Mexican Gastronomy</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem;">
+                Tribute to authentic Mexican culinary tradition: street tacos al pastor, seasoned street-cart elotes con crema y queso, and comforting breakfast huevos con chorizo made with family recipes.
+              </p>
+              <div style="font-size: 0.8rem; color: #fb923c; font-weight: 600;">
+                Focus: Culinary Heritage · Family Tradition · Warm Visuals
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Section 3: Behind-The-Scenes Engineering & Architecture -->
+        <div style="max-width: 1020px; margin: 0 auto 3rem;">
+          <div style="margin-bottom: 1.5rem; text-align: left;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.35rem;">Technical Implementation</div>
+            <h3 style="font-size: 1.6rem; color: #ffffff;">Behind The Code: Architecture &amp; Performance</h3>
+            <p style="color: var(--color-text-muted); font-size: 0.95rem;">How Michael engineered the interactive mechanics, animations, and responsive layout for the collection.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+            
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.35rem; margin-bottom: 0.6rem;">🌌</div>
+              <h4 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Cosmic Roaming Starfield</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Created using custom shader/canvas mathematics that render an infinite space background with floating stellar particles, providing a futuristic atmospheric ambiance.
+              </p>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.35rem; margin-bottom: 0.6rem;">💎</div>
+              <h4 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Dark Glassmorphism UI</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Engineered with multi-tier translucent layers (<code>rgba(15, 23, 42, 0.85)</code>), background blur filters, and glowing light blue border highlights to ensure contrast and readability.
+              </p>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.35rem; margin-bottom: 0.6rem;">📱</div>
+              <h4 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Fluid Responsive Grid</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Structured with CSS Grid <code>auto-fit</code> and <code>minmax</code> properties to dynamically adapt from mobile smartphone screens up to wide desktop monitors without breaking layout flow.
+              </p>
+            </div>
+
+            <div class="card" style="padding: 1.5rem;">
+              <div style="font-size: 1.35rem; margin-bottom: 0.6rem;">🔍</div>
+              <h4 style="font-size: 1.15rem; color: #ffffff; margin-bottom: 0.5rem;">Interactive Modal System</h4>
+              <p style="font-size: 0.92rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Implemented with client-side JavaScript for instantaneous lightbox magnification, allowing visitors to inspect image details, tags, and descriptive captions.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Section 4: Academic Impact & Next Steps -->
+        <div class="card" style="max-width: 1020px; margin: 0 auto 2.5rem; padding: 2rem; background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(56, 189, 248, 0.2);">
+          <div style="text-align: left; margin-bottom: 1.25rem;">
+            <div style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-primary); font-weight: 700; margin-bottom: 0.25rem;">Project Reflection</div>
+            <h3 style="font-size: 1.4rem; color: #ffffff;">Key Learnings &amp; Future Evolutions</h3>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+            <div>
+              <div style="font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-primary);">★</span> Front-End Growth
+              </div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Building Michael's Collection strengthened my ability to combine HTML structure, CSS design variables, and JavaScript event flow into a coherent user journey.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-primary);">★</span> Asset Pipeline Mastery
+              </div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Learned how to handle high-resolution image assets, implement fallback SVG graphics for offline resiliency, and manage aspect ratios smoothly.
+              </p>
+            </div>
+
+            <div>
+              <div style="font-weight: 700; color: #ffffff; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.5rem;">
+                <span style="color: var(--color-primary);">★</span> Future Roadmap
+              </div>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                Future planned updates include category filtering chips, sound effect cues on hover, and an expanded section for additional athletic and cultural exhibits.
+              </p>
+            </div>
+          </div>
+
+          <!-- Cross Navigation Links -->
+          <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <span style="font-size: 0.9rem; color: var(--color-text-light);">Explore other sections of Michael's portfolio:</span>
+            </div>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="experience.html" class="btn btn-primary btn-sm">Read Experience (Web Design Student) →</a>
+              <a href="media.html" class="btn btn-secondary btn-sm">Explore Media &amp; Hobbies Gallery</a>
+              <a href="index.html" class="btn btn-secondary btn-sm">Return to Home</a>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </div>
@@ -134,7 +334,7 @@
       <div class="footer-content" id="footerContent">
         <div>
           <div style="font-weight: 700; font-size: 1.15rem; color: #ffffff; margin-bottom: 0.25rem;">Michael Villalobos</div>
-          <div class="footer-copy">© 2026 Michael Villalobos. Web Development Student Portfolio.</div>
+          <div class="footer-copy">© 2026 Michael Villalobos. Web Development Student Portfolio. Grossmont High School.</div>
         </div>
         <nav class="footer-nav" id="footerNav">
           <a href="index.html" id="footerHome">Home</a>

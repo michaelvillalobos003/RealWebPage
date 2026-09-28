@@ -15,8 +15,8 @@ process.on('unhandledRejection', (reason) => {
 
 // Middleware
 app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
 // Storage configuration for Replit App Storage & Local Persistence
 const DATA_DIR = path.join(__dirname, 'data');
@@ -287,6 +287,39 @@ app.post('/api/admin/logout', (req, res) => {
 
 // Serve static assets from project root
 app.use(express.static(path.join(__dirname)));
+
+// Upload endpoint to receive exact user images
+app.post('/api/upload-image', (req, res) => {
+  try {
+    const { filename, dataUrl } = req.body;
+    if (!filename || !dataUrl) {
+      return res.status(400).json({ error: 'Filename and dataUrl are required' });
+    }
+    const matches = dataUrl.match(/^data:([A-Za-z-+\/]+);base64,(.+)$/);
+    if (!matches || matches.length !== 3) {
+      return res.status(400).json({ error: 'Invalid base64 dataUrl' });
+    }
+    const buffer = Buffer.from(matches[2], 'base64');
+    const safeName = path.basename(filename).replace(/[^a-zA-Z0-9._-]/g, '_');
+    const targetDir = path.join(__dirname, 'images');
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
+    }
+    const filePath = path.join(targetDir, safeName);
+    fs.writeFileSync(filePath, buffer);
+
+    // Also copy to assets/images if it exists
+    const assetsDir = path.join(__dirname, 'assets', 'images');
+    if (fs.existsSync(assetsDir)) {
+      fs.writeFileSync(path.join(assetsDir, safeName), buffer);
+    }
+
+    return res.status(200).json({ success: true, url: `/images/${safeName}` });
+  } catch (err) {
+    console.error('Error saving image:', err);
+    return res.status(500).json({ error: 'Failed to save image' });
+  }
+});
 
 // Fallback to index.html for root route
 app.get('/', (req, res) => {

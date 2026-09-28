@@ -15,7 +15,7 @@
   <header class="site-header" id="siteHeader">
     <div class="container" id="headerContainer">
       <a href="index.html" class="brand-link" id="brandLink">
-        <img src="assets/images/placeholder_portrait.svg" alt="Michael Villalobos" class="brand-avatar" id="headerAvatar">
+        <img src="assets/images/michael_portrait.jpg" onerror="this.onerror=null; this.src='assets/images/placeholder_portrait.svg';" alt="Michael Villalobos" class="brand-avatar" id="headerAvatar">
         <span>Michael Villalobos</span>
       </a>
       <nav class="site-nav" id="siteNav">
@@ -42,152 +42,122 @@
               <span class="reveal-block"></span>
             </span>
           </h1>
-          <p>A structured 10-item media showcase with labeled placeholders for your personal photos, project demo videos, and social updates. Click any card to inspect in full view.</p>
+          <p>An interactive photo and project gallery showcasing my web development coursework, projects, and tech journey. Click any image to view in full resolution.</p>
         </div>
 
-        <!-- 10 Gallery Items -->
+        <!-- Gallery Items -->
         <div class="gallery-grid" id="galleryGrid">
           
-          <!-- Item 1: Video Placeholder -->
-          <div class="media-card" data-type="video" data-src="assets/videos/project_demo.mp4" data-title="[Placeholder: Video Demo 1]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." id="mediaCard1">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Video</span>
-              <img src="assets/images/placeholder_video.svg" alt="Placeholder Video 1">
+          <!-- Item 1: Michael's Collection Curated Gallery Screenshot -->
+          <div class="media-card" data-type="image" data-src="images/curated_gallery_screenshot.png" data-title="Michael's Collection · Curated Gallery" data-caption="An interactive gallery project built with a cosmic roaming starfield background, dynamic controls, and cards showcasing Spider-Man, Gilberto Mora, Disney Woody, world landmarks, and Mexican gastronomy." id="mediaCard1">
+            <div class="media-card-preview" style="background: #02040a;">
+              <span class="media-type-badge">Featured Project</span>
+              <img src="images/curated_gallery_screenshot.png" onerror="this.onerror=null; this.src='images/curated_gallery_screenshot.svg';" alt="Michael's Collection Curated Gallery Project">
             </div>
             <div class="media-card-body">
-              <h3>[Placeholder: Video Demo 1]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque varius nunc sit amet ultrices.</p>
-              <div class="media-card-action">Play Demo Video ↗</div>
+              <h3>Michael's Collection · Curated Gallery</h3>
+              <p>Cosmic starfield interactive gallery built with HTML, CSS Grid, custom shaders, and curated pop culture &amp; travel cards.</p>
+              <div class="media-card-action">View Full Image ↗</div>
             </div>
           </div>
 
-          <!-- Item 2: Image Placeholder -->
-          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Project Showcase Photo 1]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco." id="mediaCard2">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Photo</span>
-              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 1">
+          <!-- Item 2: Image Slot 2 (Bike) -->
+          <div class="media-card" data-type="image" data-src="images/bike.jpg" data-title="Bike" data-caption="I love riding my bike and it's my favorite hobby to do." id="mediaCard2">
+            <div class="media-card-preview" id="bikeDropBox" style="background: #02040a;">
+              <span class="media-type-badge">Hobby</span>
+              <img src="images/bike.jpg" onerror="this.onerror=null; this.src='assets/images/placeholder_media.svg';" alt="Michael's Super73 Custom Red Bike" id="bikeImagePreview">
+            </div>
+            <div class="project-img-upload-bar" id="bikeUploadBar" style="padding: 0.45rem 1rem; background: rgba(56, 189, 248, 0.04); border-bottom: 1px solid rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;">
+              <span id="bikeUploadStatusText" style="font-size: 0.76rem; color: var(--color-text-light);">
+                Select <code>IMG_6843.jpeg</code>:
+              </span>
+              <label for="bikeFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.74rem; padding: 0.2rem 0.6rem;">
+                <span>Choose Image</span>
+                <input type="file" id="bikeFileInput" accept="image/png, image/jpeg, image/jpg, image/webp" style="display: none;">
+              </label>
             </div>
             <div class="media-card-body">
-              <h3>[Placeholder: Showcase Photo 1]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.</p>
+              <h3>Bike</h3>
+              <p>I love riding my bike and it's my favorite hobby to do.</p>
               <div class="media-card-action">View Full Photo ↗</div>
             </div>
           </div>
 
-          <!-- Item 3: Image Placeholder -->
-          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Hackathon / Workshop 2]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident." id="mediaCard3">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Photo</span>
-              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 2">
+          <!-- Item 3: Image Slot 3 (Hobby: Going Outside with Friends) -->
+          <div class="media-card" data-type="image" data-src="images/outside_friends.jpg" data-title="Going Outside with Friends" data-caption="I like going outside with my friends, exploring, enjoying nature, and hanging out together." id="mediaCard3">
+            <div class="media-card-preview" id="friendsDropBox" style="background: #02040a;">
+              <span class="media-type-badge">Hobby</span>
+              <img src="images/outside_friends.jpg" onerror="this.onerror=null; this.src='assets/images/outside_friends.jpg';" alt="Going Outside with Friends" id="friendsImagePreview">
+            </div>
+            <div class="project-img-upload-bar" id="friendsUploadBar" style="padding: 0.45rem 1rem; background: rgba(56, 189, 248, 0.04); border-bottom: 1px solid rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;">
+              <span id="friendsUploadStatusText" style="font-size: 0.76rem; color: var(--color-text-light);">
+                Custom photo:
+              </span>
+              <label for="friendsFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.74rem; padding: 0.2rem 0.6rem;">
+                <span>Choose Image</span>
+                <input type="file" id="friendsFileInput" accept="image/png, image/jpeg, image/jpg, image/webp" style="display: none;">
+              </label>
             </div>
             <div class="media-card-body">
-              <h3>[Placeholder: Workshop Photo 2]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud.</p>
+              <h3>Going Outside with Friends</h3>
+              <p>I like going outside with my friends, exploring outdoors, and making great memories together.</p>
               <div class="media-card-action">View Full Photo ↗</div>
             </div>
           </div>
 
-          <!-- Item 4: Social Embed Card -->
-          <div class="media-card social-embed-card" id="mediaCard4">
-            <div class="social-embed-inner">
-              <span class="media-type-badge" style="position: static; align-self: flex-start;">Social Update</span>
-              <div class="social-embed-header">
-                <img src="assets/images/placeholder_portrait.svg" alt="Avatar" class="social-embed-avatar">
-                <div>
-                  <div class="social-embed-author">Michael Villalobos</div>
-                  <div class="social-embed-handle">@michael_v [Placeholder]</div>
-                </div>
-              </div>
-              <div class="social-embed-text">
-                "[Placeholder: Published my first interactive web development project with Light Blue styling and persistent JSON storage! Excited to learn more.]"
-              </div>
-              <div style="font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">
-                Posted · 2 days ago
-              </div>
+          <!-- Item 4: Image Slot 4 (Hobby: Watching Movies) -->
+          <div class="media-card" data-type="image" data-src="images/watching_movies.jpg" data-title="Watching Movies" data-caption="I like watching movies, discovering compelling stories, and relaxing with great films." id="mediaCard4">
+            <div class="media-card-preview" id="moviesDropBox" style="background: #02040a;">
+              <span class="media-type-badge">Hobby</span>
+              <img src="images/watching_movies.jpg" onerror="this.onerror=null; this.src='assets/images/watching_movies.jpg';" alt="Watching Movies" id="moviesImagePreview">
             </div>
-          </div>
-
-          <!-- Item 5: Video Placeholder -->
-          <div class="media-card" data-type="video" data-src="assets/videos/project_demo.mp4" data-title="[Placeholder: Video Demo 2]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin nec lectus feugiat, congue risus non." id="mediaCard5">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Video</span>
-              <img src="assets/images/placeholder_video.svg" alt="Placeholder Video 2">
+            <div class="project-img-upload-bar" id="moviesUploadBar" style="padding: 0.45rem 1rem; background: rgba(56, 189, 248, 0.04); border-bottom: 1px solid rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;">
+              <span id="moviesUploadStatusText" style="font-size: 0.76rem; color: var(--color-text-light);">
+                Custom photo:
+              </span>
+              <label for="moviesFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.74rem; padding: 0.2rem 0.6rem;">
+                <span>Choose Image</span>
+                <input type="file" id="moviesFileInput" accept="image/png, image/jpeg, image/jpg, image/webp" style="display: none;">
+              </label>
             </div>
             <div class="media-card-body">
-              <h3>[Placeholder: Video Demo 2]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vulputate tortor in metus mollis feugiat.</p>
-              <div class="media-card-action">Play Demo Video ↗</div>
-            </div>
-          </div>
-
-          <!-- Item 6: Image Placeholder -->
-          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Code Lab / Computer Setup]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod, nisl at aliquam interdum." id="mediaCard6">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Photo</span>
-              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 3">
-            </div>
-            <div class="media-card-body">
-              <h3>[Placeholder: Lab Setup Photo]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique purus sit amet libero porta.</p>
+              <h3>Watching Movies</h3>
+              <p>I like watching movies, discovering great films, and unwinding with cinema and compelling stories.</p>
               <div class="media-card-action">View Full Photo ↗</div>
             </div>
           </div>
 
-          <!-- Item 7: Image Placeholder -->
-          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Robotics / Hardware Build]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore." id="mediaCard7">
+          <!-- Item 5: Image Slot 5 -->
+          <div class="media-card" data-type="image" data-src="assets/images/michael_studying.jpg" data-title="Independent Code Study &amp; Architecture" data-caption="Deep dive into algorithms, JavaScript paradigms, and frontend interface design." id="mediaCard5">
             <div class="media-card-preview">
-              <span class="media-type-badge">Photo</span>
-              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 4">
+              <span class="media-type-badge">Academics</span>
+              <img src="assets/images/michael_studying.jpg" onerror="this.onerror=null; this.src='assets/images/placeholder_media.svg';" alt="Study Session">
             </div>
             <div class="media-card-body">
-              <h3>[Placeholder: Project Build Photo]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus.</p>
+              <h3>Code Study &amp; Architecture</h3>
+              <p>Mastering modern frameworks, modular JavaScript architecture, and responsive user interfaces.</p>
               <div class="media-card-action">View Full Photo ↗</div>
             </div>
           </div>
 
-          <!-- Item 8: Social Embed Card -->
-          <div class="media-card social-embed-card" id="mediaCard8">
-            <div class="social-embed-inner">
-              <span class="media-type-badge" style="position: static; align-self: flex-start;">Announcement</span>
-              <div class="social-embed-header">
-                <img src="assets/images/placeholder_portrait.svg" alt="Avatar" class="social-embed-avatar">
-                <div>
-                  <div class="social-embed-author">Michael Villalobos</div>
-                  <div class="social-embed-handle">@michael_v [Placeholder]</div>
-                </div>
-              </div>
-              <div class="social-embed-text">
-                "[Placeholder: Completed the first checkpoint of web development class! Building with HTML5 semantic tags, custom CSS variables, and server-side JavaScript.]"
-              </div>
-              <div style="font-size: 0.8rem; color: var(--color-primary); font-weight: 600;">
-                Posted · 1 week ago
-              </div>
+          <!-- Item 6: Image Slot 6 (Hobby: Soccer) -->
+          <div class="media-card" data-type="image" data-src="images/soccer.jpg" data-title="Soccer" data-caption="I love playing soccer, staying active on the pitch, and enjoying games with friends and teammates." id="mediaCard6">
+            <div class="media-card-preview" id="soccerDropBox" style="background: #02040a;">
+              <span class="media-type-badge">Hobby</span>
+              <img src="images/soccer.jpg" onerror="this.onerror=null; this.src='assets/images/soccer.jpg';" alt="Soccer Match and Field" id="soccerImagePreview">
             </div>
-          </div>
-
-          <!-- Item 9: Image Placeholder -->
-          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Tech Presentation Photo]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed nibh id nisl pretium cursus." id="mediaCard9">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Photo</span>
-              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 5">
+            <div class="project-img-upload-bar" id="soccerUploadBar" style="padding: 0.45rem 1rem; background: rgba(56, 189, 248, 0.04); border-bottom: 1px solid rgba(56, 189, 248, 0.15); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;">
+              <span id="soccerUploadStatusText" style="font-size: 0.76rem; color: var(--color-text-light);">
+                Custom photo:
+              </span>
+              <label for="soccerFileInput" class="btn btn-secondary btn-sm" style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.3rem; font-size: 0.74rem; padding: 0.2rem 0.6rem;">
+                <span>Choose Image</span>
+                <input type="file" id="soccerFileInput" accept="image/png, image/jpeg, image/jpg, image/webp" style="display: none;">
+              </label>
             </div>
             <div class="media-card-body">
-              <h3>[Placeholder: Presentation Photo]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac ipsum et purus auctor feugiat.</p>
-              <div class="media-card-action">View Full Photo ↗</div>
-            </div>
-          </div>
-
-          <!-- Item 10: Image Placeholder -->
-          <div class="media-card" data-type="image" data-src="assets/images/placeholder_media.svg" data-title="[Placeholder: Certificate / Award Photo]" data-caption="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel sem sit amet ligula accumsan molestie." id="mediaCard10">
-            <div class="media-card-preview">
-              <span class="media-type-badge">Photo</span>
-              <img src="assets/images/placeholder_media.svg" alt="Placeholder Photo 6">
-            </div>
-            <div class="media-card-body">
-              <h3>[Placeholder: Achievement Photo]</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sagittis velit sit amet enim scelerisque.</p>
+              <h3>Soccer</h3>
+              <p>I love playing soccer, staying active on the pitch, and enjoying games with friends and teammates.</p>
               <div class="media-card-action">View Full Photo ↗</div>
             </div>
           </div>
